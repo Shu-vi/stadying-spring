@@ -1,14 +1,13 @@
 package org.generalov;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Random;
 
+@Component
 public class MusicPlayer {
     private List<Music> musics;
     @Value("${MusicPlayer.name}")
@@ -16,6 +15,7 @@ public class MusicPlayer {
     @Value("${MusicPlayer.volume}")
     private int volume;
 
+    @Autowired
     public MusicPlayer(List<Music> musics) {
        this.musics = musics;
     }

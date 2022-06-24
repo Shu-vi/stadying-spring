@@ -4,16 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+@Component
 public class Computer {
     @Value("${Computer.id}")
     private int id;
     private MusicPlayer musicPlayer;
 
+    @Autowired
     public Computer(MusicPlayer musicPlayer) {
-        this.musicPlayer = musicPlayer;
-    }
-
-    public void setMusicPlayer(MusicPlayer musicPlayer) {
         this.musicPlayer = musicPlayer;
     }
 
